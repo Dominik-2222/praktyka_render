@@ -168,7 +168,7 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
 
 -(void) effectDiference:(vector<vector<pixel_rgb>>)tab_image width:(NSInteger)width height:(NSInteger)height map:(unsigned char*)pixels tab1:(int) tab1 tab2:(int) tab2{
     
-}
+}	
 -(vector<vector<pixel_rgb>>) Gausse_Blur:(vector<vector<pixel_rgb>>) tab_image width:(NSInteger)width height:(NSInteger)height map:(unsigned char*)pixels rowBytes:(NSInteger)rowBytes radius:(NSInteger)radius{
     int przebieg=1;
      vector<vector<double>> ker = [self createGaussianBlurKernel:((int)radius) przebieg:przebieg];
