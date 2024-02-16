@@ -57,7 +57,7 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
     }
     return tab_image;
 }
--(vector<vector<pixel_rgb>>) Blur_Clamp_To_Border:(vector<vector<pixel_rgb>>) tab_image width:(NSInteger)width height:(NSInteger)height map:(unsigned char*)pixels rowBytes:(NSInteger)rowBytes radius:(NSInteger)radius {
+-(vector<vector<pixel_rgb>>) Blur_Clamp_To_Border:(vector<vector<pixel_rgb>>) tab_image width:(NSInteger)width height:(NSInteger)height map:(unsigned char*)pixels radius:(NSInteger)radius {
     
     long sum_r=0, sum_g=0, sum_b=0;
     for(long i =  radius; i < (height-radius); i++) {
@@ -81,7 +81,7 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
     }
     return tab_image;
 }
--(pixel_rgb) piksel_kol:(vector<vector<pixel_rgb>>) tab_image width:(NSInteger)width height:(NSInteger)height map:(unsigned char*)pixels rowBytes:(NSInteger)rowBytes radius:(NSInteger)radius x_axis:(double) x y_axis:(double) y tab:(NSInteger) tab{
+-(pixel_rgb) piksel_kol:(vector<vector<pixel_rgb>>) tab_image width:(NSInteger)width height:(NSInteger)height map:(unsigned char*)pixels radius:(NSInteger)radius x_axis:(double) x y_axis:(double) y tab:(NSInteger) tab{
     pixel_rgb piksel;
     
     int x_= static_cast<int>(floor(x));//calkowia
@@ -169,7 +169,7 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
 -(void) effectDiference:(vector<vector<pixel_rgb>>)tab_image width:(NSInteger)width height:(NSInteger)height map:(unsigned char*)pixels tab1:(int) tab1 tab2:(int) tab2{
     
 }	
--(vector<vector<pixel_rgb>>) Gausse_Blur:(vector<vector<pixel_rgb>>) tab_image width:(NSInteger)width height:(NSInteger)height map:(unsigned char*)pixels rowBytes:(NSInteger)rowBytes radius:(NSInteger)radius{
+-(vector<vector<pixel_rgb>>) Gausse_Blur:(vector<vector<pixel_rgb>>) tab_image width:(NSInteger)width height:(NSInteger)height map:(unsigned char*)pixels radius:(NSInteger)radius{
     int przebieg=1;
      vector<vector<double>> ker = [self createGaussianBlurKernel:((int)radius) przebieg:przebieg];
 
@@ -231,7 +231,6 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
             tab_image[i][j].g.resize(2);
             tab_image[i][j].b.resize(2);
             tab_image[i][j].a.resize(2);
-           
         }
     }
     //zapis orginalnego obrazka to tablicy tab_image.r[0]
@@ -239,11 +238,11 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
     //operacje na nowym obrazku tab_image.r[1];
     switch (blur_option){
     case 1://Blur Clamp To border
-            tab_image=[self Blur_Clamp_To_Border:tab_image width:width height:height map:pixels rowBytes:rowBytes radius:radius];
+            tab_image=[self Blur_Clamp_To_Border:tab_image width:width height:height map:pixels radius:radius];
             break;
         case 2:
-            tab_image=[self Gausse_Blur:tab_image width:width height:height map:pixels rowBytes:rowBytes radius:radius];
-           
+            tab_image=[self Gausse_Blur:tab_image width:width height:height map:pixels radius:radius];
+           	
             break;
         case 3:
             tab_image=[self Mirrored_repeat:tab_image width:width height:height map:pixels rowBytes:rowBytes radius:radius];
@@ -343,3 +342,4 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
     NSLog(@"wyświetl");
 }
 @end
+	
