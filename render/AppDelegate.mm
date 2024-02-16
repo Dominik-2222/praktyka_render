@@ -218,7 +218,7 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
     NSInteger width = [bitmapRep pixelsWide];
     NSInteger height = [bitmapRep pixelsHigh];
     NSInteger rowBytes = [bitmapRep bytesPerRow];
-    unsigned char *pixels = [bitmapRep bitmapData];
+    unsigned char *pixels = [bitmapRep bitmapData];	
     vector<vector<pixel_rgb>>tab_image;
     tab_image.resize(height);
     for (int i = 0; i < height; i++){
