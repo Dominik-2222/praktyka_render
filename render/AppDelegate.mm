@@ -342,4 +342,3 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
     NSLog(@"wyświetl");
 }
 @end
-	
