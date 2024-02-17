@@ -10,7 +10,7 @@
 using namespace std;
 @interface AppDelegate : NSObject <NSApplicationDelegate>{
     IBOutlet NSImageView *imageView;
-    IBOutlet NSImageView *grayimageView;
+
     }
 @property (nonatomic, strong) NSImageView *imageView;
 
