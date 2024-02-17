@@ -9,18 +9,27 @@
 #include <vector>
 using namespace std;
 @interface AppDelegate : NSObject <NSApplicationDelegate>{
-    IBOutlet NSImageView *imageView;
+    
 
     }
 @property (nonatomic, strong) NSImageView *imageView;
 
 - (void)openImageView:(NSImage *)image;
 typedef struct pixel_rgb{
-    vector<uint8_t> r;
-    vector<uint8_t> g;
-    vector<uint8_t> b;
-    vector<uint8_t> a;
+    uint8_t r;
+    uint8_t g;
+    uint8_t b;
+    uint8_t a;
 }pixel_rgb;
+typedef struct image_object{
+    vector<pixel_rgb> obraz;
+    NSInteger width;
+    NSInteger height;
+    NSInteger rowBytes;
+    
+}image_object;
+
+
 
 @end
 
