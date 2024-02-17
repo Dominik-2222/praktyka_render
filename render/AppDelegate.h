@@ -12,6 +12,9 @@ using namespace std;
     IBOutlet NSImageView *imageView;
     IBOutlet NSImageView *grayimageView;
     }
+@property (nonatomic, strong) NSImageView *imageView;
+
+- (void)openImageView:(NSImage *)image;
 typedef struct pixel_rgb{
     vector<uint8_t> r;
     vector<uint8_t> g;
