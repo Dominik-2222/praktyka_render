@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="imageView" destination="buZ-k8-bvD" id="K3M-tP-bbk"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -684,106 +685,273 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="711" height="668"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1200"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="711" height="668"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" translatesAutoresizingMaskIntoConstraints="NO" id="NyU-RB-Qq9">
+                    <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1q-M8-vSd">
                         <rect key="frame" x="0.0" y="0.0" width="711" height="668"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <customView id="xrQ-yD-iuk">
-                                <rect key="frame" x="0.0" y="0.0" width="711" height="321"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <subviews>
-                                    <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0bc-bg-X9A">
-                                        <rect key="frame" x="13" y="233" width="107" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Gausse Blur" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hJl-qP-n6C">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="Gausse_Blure_Button:" target="Voe-Tx-rLC" id="xKa-lY-tKt"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vs5-JY-CCe">
-                                        <rect key="frame" x="13" y="265" width="160" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Blur Clamp to border" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0gA-jq-a0T">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="filtr_blur:" target="Voe-Tx-rLC" id="2Kv-ie-3Z6"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0la-JP-X5t">
-                                        <rect key="frame" x="135" y="233" width="131" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" title="effect diference" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ynp-wq-T8f">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zrm-9O-cAG">
-                                        <rect key="frame" x="388" y="259" width="88" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" title="Negatyw" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AQM-Vx-AyH">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="negatyw:" target="Voe-Tx-rLC" id="uc3-JO-8nZ"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FyO-ka-2Hb">
-                                        <rect key="frame" x="499" y="245" width="111" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" title="Filtr szarosci" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="43k-pz-ZGn">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="gray:" target="Voe-Tx-rLC" id="kTb-dc-tmb"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10l-RR-hdu">
-                                        <rect key="frame" x="608" y="245" width="86" height="32"/>
-                                        <buttonCell key="cell" type="push" title="wyświetl" bezelStyle="rounded" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hCi-LT-310" userLabel="wyswietl">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="wyswietl:" target="Voe-Tx-rLC" id="9SZ-wD-0ix"/>
-                                        </connections>
-                                    </button>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UPV-MX-IaF" userLabel="opis">
-                                        <rect key="frame" x="521" y="279" width="145" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" alignment="center" title="Nazwa użytkownika" bezelStyle="round" id="fUU-dW-mOW" userLabel="opis">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Vs5-JY-CCe" firstAttribute="top" secondItem="xrQ-yD-iuk" secondAttribute="top" constant="29" id="JPb-si-nNM"/>
-                                    <constraint firstAttribute="trailing" secondItem="10l-RR-hdu" secondAttribute="trailing" constant="24" id="LHJ-PE-xGM"/>
-                                    <constraint firstItem="Vs5-JY-CCe" firstAttribute="leading" secondItem="xrQ-yD-iuk" secondAttribute="leading" constant="20" symbolic="YES" id="Rs5-UO-GWI"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0bc-bg-X9A" secondAttribute="trailing" constant="20" symbolic="YES" id="dk7-Ac-ByE"/>
-                                </constraints>
-                            </customView>
-                            <customView fixedFrame="YES" id="Zxx-0x-ZOU">
-                                <rect key="frame" x="0.0" y="331" width="711" height="337"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </customView>
-                        </subviews>
-                        <holdingPriorities>
-                            <real value="250"/>
-                            <real value="250"/>
-                        </holdingPriorities>
-                    </splitView>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="settings" identifier="" id="NPo-Iz-vZV" userLabel="settings">
+                                <view key="view" id="Nj4-z3-f8C">
+                                    <rect key="frame" x="10" y="33" width="691" height="622"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" translatesAutoresizingMaskIntoConstraints="NO" id="NyU-RB-Qq9">
+                                            <rect key="frame" x="0.0" y="0.0" width="691" height="622"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <customView id="xrQ-yD-iuk" userLabel="top">
+                                                    <rect key="frame" x="0.0" y="0.0" width="691" height="299"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0bc-bg-X9A">
+                                                            <rect key="frame" x="13" y="211" width="107" height="32"/>
+                                                            <buttonCell key="cell" type="push" title="Gausse Blur" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hJl-qP-n6C">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="Gausse_Blure_Button:" target="Voe-Tx-rLC" id="xKa-lY-tKt"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vs5-JY-CCe">
+                                                            <rect key="frame" x="13" y="243" width="160" height="32"/>
+                                                            <buttonCell key="cell" type="push" title="Blur Clamp to border" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0gA-jq-a0T">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="filtr_blur:" target="Voe-Tx-rLC" id="2Kv-ie-3Z6"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0la-JP-X5t">
+                                                            <rect key="frame" x="135" y="211" width="131" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="push" title="effect diference" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ynp-wq-T8f">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zrm-9O-cAG">
+                                                            <rect key="frame" x="388" y="237" width="88" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="push" title="Negatyw" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AQM-Vx-AyH">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="negatyw:" target="Voe-Tx-rLC" id="uc3-JO-8nZ"/>
+                                                            </connections>
+                                                        </button>
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UPV-MX-IaF" userLabel="opis">
+                                                            <rect key="frame" x="521" y="257" width="145" height="22"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" alignment="center" title="Nazwa użytkownika" bezelStyle="round" id="fUU-dW-mOW" userLabel="opis">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FyO-ka-2Hb">
+                                                            <rect key="frame" x="474" y="223" width="111" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="push" title="Filtr szarosci" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="43k-pz-ZGn">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="gray:" target="Voe-Tx-rLC" id="kTb-dc-tmb"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Vs5-JY-CCe" firstAttribute="top" secondItem="xrQ-yD-iuk" secondAttribute="top" constant="29" id="JPb-si-nNM"/>
+                                                        <constraint firstItem="Vs5-JY-CCe" firstAttribute="leading" secondItem="xrQ-yD-iuk" secondAttribute="leading" constant="20" symbolic="YES" id="Rs5-UO-GWI"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0bc-bg-X9A" secondAttribute="trailing" constant="20" symbolic="YES" id="dk7-Ac-ByE"/>
+                                                    </constraints>
+                                                </customView>
+                                                <customView fixedFrame="YES" id="Zxx-0x-ZOU" userLabel="down">
+                                                    <rect key="frame" x="0.0" y="309" width="691" height="313"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </customView>
+                                            </subviews>
+                                            <holdingPriorities>
+                                                <real value="250"/>
+                                                <real value="250"/>
+                                            </holdingPriorities>
+                                        </splitView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="image" identifier="" id="hQo-V3-zYU" userLabel="obraz">
+                                <view key="view" id="M5D-jS-FQT">
+                                    <rect key="frame" x="10" y="33" width="691" height="622"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" translatesAutoresizingMaskIntoConstraints="NO" id="gFG-aO-wfE">
+                                            <rect key="frame" x="0.0" y="0.0" width="691" height="622"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <customView fixedFrame="YES" id="ZU3-0z-ljn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="691" height="133"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2q-PU-Obp">
+                                                            <rect key="frame" x="0.0" y="0.0" width="691" height="133"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <customView fixedFrame="YES" id="OFH-q9-Drr" userLabel="left">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="133"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XNT-8O-GEv">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="133"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <subviews>
+                                                                                <customView fixedFrame="YES" id="sf8-Uk-ke1">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="168" height="133"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <subviews>
+                                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10l-RR-hdu">
+                                                                                            <rect key="frame" x="18" y="51" width="132" height="32"/>
+                                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                            <buttonCell key="cell" type="push" title="generuj obrazek" bezelStyle="rounded" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hCi-LT-310" userLabel="wyswietl">
+                                                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                                                <font key="font" metaFont="system"/>
+                                                                                            </buttonCell>
+                                                                                            <connections>
+                                                                                                <action selector="wyswietl:" target="Voe-Tx-rLC" id="9SZ-wD-0ix"/>
+                                                                                            </connections>
+                                                                                        </button>
+                                                                                    </subviews>
+                                                                                </customView>
+                                                                                <customView fixedFrame="YES" id="DBM-h4-xqB">
+                                                                                    <rect key="frame" x="178" y="0.0" width="165" height="133"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                </customView>
+                                                                            </subviews>
+                                                                            <holdingPriorities>
+                                                                                <real value="250"/>
+                                                                                <real value="250"/>
+                                                                            </holdingPriorities>
+                                                                        </splitView>
+                                                                    </subviews>
+                                                                </customView>
+                                                                <customView fixedFrame="YES" id="AYm-1e-3WF">
+                                                                    <rect key="frame" x="353" y="0.0" width="338" height="133"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7J-TF-lEw">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="338" height="133"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <subviews>
+                                                                                <customView fixedFrame="YES" id="jLT-BE-19e">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="133"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                </customView>
+                                                                                <customView fixedFrame="YES" id="DDR-XB-kLT">
+                                                                                    <rect key="frame" x="175" y="0.0" width="163" height="133"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                </customView>
+                                                                            </subviews>
+                                                                            <holdingPriorities>
+                                                                                <real value="250"/>
+                                                                                <real value="250"/>
+                                                                            </holdingPriorities>
+                                                                        </splitView>
+                                                                    </subviews>
+                                                                </customView>
+                                                            </subviews>
+                                                            <holdingPriorities>
+                                                                <real value="250"/>
+                                                                <real value="250"/>
+                                                            </holdingPriorities>
+                                                        </splitView>
+                                                    </subviews>
+                                                </customView>
+                                                <customView fixedFrame="YES" id="Spn-Gu-R98">
+                                                    <rect key="frame" x="0.0" y="143" width="691" height="479"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" translatesAutoresizingMaskIntoConstraints="NO" id="pRh-0W-g2M">
+                                                            <rect key="frame" x="0.0" y="0.0" width="691" height="479"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <customView fixedFrame="YES" id="Sq4-qK-of3">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="691" height="95"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <splitView fixedFrame="YES" arrangesAllSubviews="NO" dividerStyle="paneSplitter" translatesAutoresizingMaskIntoConstraints="NO" id="4rK-a6-Wdm">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="691" height="95"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <subviews>
+                                                                                <customView fixedFrame="YES" id="CI4-yR-Cfm">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="691" height="42"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <subviews>
+                                                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VaX-pe-WMY">
+                                                                                            <rect key="frame" x="0.0" y="13" width="691" height="16"/>
+                                                                                            <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                                                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="center" title="pasek postepu ładowania" id="8qx-Zm-cun">
+                                                                                                <font key="font" usesAppearanceFont="YES"/>
+                                                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                            </textFieldCell>
+                                                                                        </textField>
+                                                                                    </subviews>
+                                                                                </customView>
+                                                                                <customView fixedFrame="YES" id="g36-Gh-WfL">
+                                                                                    <rect key="frame" x="0.0" y="52" width="691" height="43"/>
+                                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                                    <subviews>
+                                                                                        <progressIndicator fixedFrame="YES" maxValue="100" doubleValue="50" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="rdb-jF-2SU">
+                                                                                            <rect key="frame" x="0.0" y="11" width="691" height="20"/>
+                                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                                                        </progressIndicator>
+                                                                                    </subviews>
+                                                                                </customView>
+                                                                            </subviews>
+                                                                            <holdingPriorities>
+                                                                                <real value="250"/>
+                                                                                <real value="250"/>
+                                                                            </holdingPriorities>
+                                                                        </splitView>
+                                                                    </subviews>
+                                                                </customView>
+                                                                <customView fixedFrame="YES" id="kMR-ru-GUd">
+                                                                    <rect key="frame" x="0.0" y="105" width="691" height="374"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="buZ-k8-bvD">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="691" height="374"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="ar3-pD-Hrg"/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                </customView>
+                                                            </subviews>
+                                                            <holdingPriorities>
+                                                                <real value="250"/>
+                                                                <real value="250"/>
+                                                            </holdingPriorities>
+                                                        </splitView>
+                                                    </subviews>
+                                                </customView>
+                                            </subviews>
+                                            <holdingPriorities>
+                                                <real value="250"/>
+                                                <real value="250"/>
+                                            </holdingPriorities>
+                                        </splitView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
                 </subviews>
             </view>
             <connections>
