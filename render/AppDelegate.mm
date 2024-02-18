@@ -88,8 +88,12 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
             }
     }
 }
--(pixel_rgb)change_rgba:(pixel_rgb)piksel_org r:(uint8_t)r g:(uint8_t)g b:(uint8_t)b a:(uint8_t)a tab:(int) tab{
+-(pixel_rgb)change_rgba:(pixel_rgb)piksel_org r:(uint8_t)r g:(uint8_t)g b:(uint8_t)b a:(uint8_t)a{
     pixel_rgb piksel;
+    piksel.r=r;
+    piksel.g=g;
+    piksel.b=b;
+    piksel.a=a;
     return piksel;
 }
 
@@ -152,87 +156,11 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
     }
     return tab_image;
 }
-
-- (vector<vector<double>>) createGaussianBlurKernel:(int)radius przebieg:(int)przebieg{
-    int size = radius * 2 + 1;
-
-    vector<vector<double>> kernel(size, vector<double>(size));
-    
-    double r=0,pom2=0;
-    int x=0,y=0;
-    vector<double>r_wartosci;//zbior wszystkich promieni
-    
-    for (int i =  0; i <= radius; ++i) {
-        for (int j =  0; j <= i; ++j) {
-            x = i ;
-            y = j ;
-            r = sqrt(x * x + y * y);
-            r_wartosci.push_back(r);
-        }}
-    double wegihtsum=0,weightsum2=0;
-    for (int i =  0; i < size; i++) {
-        for (int j =  0; j < size; j++) {
-            x = abs(i - radius);
-            y =  abs(j - radius);
-            r = sqrt(x * x + y * y);
-            pom2 = (pow(M_E,-(pow(r,2)))*2/radius);
-            kernel[i][j]=pom2;
-            wegihtsum++;
-        }
-    }
-    for(int i=0;i<size;i++)
-    {
-        for(int j=0;j<size;j++)
-        {
-            weightsum2+=kernel[i][j];
-        }
-    }
-  //  wegihtsum;weightsum2;
-    return kernel;
-}
-//Gausse blur
-
 -(void) effectDiference:(vector<vector<pixel_rgb>>)tab_image width:(NSInteger)width height:(NSInteger)height map:(unsigned char*)pixels tab1:(int) tab1 tab2:(int) tab2{
     
-}	
--(vector<vector<pixel_rgb>>) Gausse_Blur:(vector<vector<pixel_rgb>>) tab_image width:(NSInteger)width height:(NSInteger)height map:(unsigned char*)pixels rowBytes:(NSInteger)rowBytes radius:(NSInteger)radius{
-    int przebieg=1;
-     vector<vector<double>> ker = [self createGaussianBlurKernel:((int)radius) przebieg:przebieg];
-    vector<vector<pixel_rgb>> tab_image2;
-       
-    int x_ker=0;
-    int y_ker=0;
-    double sum_r=0, sum_g=0, sum_b=0;
-    for(long i =  radius; i < (height-radius); i++) {
-        for(long j =  radius; j < (width-radius); j++) {
-            sum_r=0;
-            sum_g=0;
-            sum_b=0;
-            x_ker=0;
-            y_ker=0;
-            
-            double tmpW = 0.;
-
-            for(long iy=(i-radius);iy<=(i+radius);iy++){
-                for(long jx=(j-radius);jx<=(j+radius);jx++){
-                    sum_r+=tab_image[iy][jx].r*ker[y_ker][x_ker];
-                    sum_g+=tab_image[iy][jx].g*ker[y_ker][x_ker];
-                    sum_b+=tab_image[iy][jx].b*ker[y_ker][x_ker];
-                    x_ker++;
-                    tmpW += ker[y_ker][x_ker];
-                }y_ker++;
-            }
-            //long n=((radius*2+1)*(radius*2+1));
-            sum_r=floor(sum_r);
-            sum_r=floor(sum_g);
-            sum_r=floor(sum_b);
-            tab_image2[i][j].r=(sum_r/tmpW);// Red
-            tab_image2[i][j].g=(sum_g/tmpW);// Green
-            tab_image2[i][j].b=(sum_b/tmpW);// Blue
-        }
-    }
-    return tab_image;
 }
+// Poprawiona funkcja tworzenia jądra rozmycia gaussowskiego
+
 
 -(void)blur:(NSImage *)image rad:(long)radius blur_option:(int)blur_option{
     NSDate *startTime = [NSDate date];
@@ -251,7 +179,7 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
             tab_image=[self Blur_Clamp_To_Border:tab_image width:width height:height map:pixels rowBytes:rowBytes radius:radius];
             break;
         case 2:
-            tab_image=[self Gausse_Blur:tab_image width:width height:height map:pixels rowBytes:rowBytes radius:radius];
+//            tab_image=[self Gausse_Blur:tab_image width:width height:height radius:radius];
            
             break;
         case 3:
@@ -315,9 +243,58 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
 
 
 
+- (vector<vector<double>>)createGaussianBlurKernel:(int)radius {
+    int size = radius * 2 + 1;
+    vector<vector<double>> kernel(size, vector<double>(size));
+    double sigma = radius / 2.0;
+    double sum = 0.0;
 
-
-
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            int x = i - radius;
+            int y = j - radius;
+            double exponent = -(x * x + y * y) / (2 * sigma * sigma);
+            kernel[i][j] = (exp(exponent) / (2 * M_PI * sigma * sigma));
+            sum += kernel[i][j];
+        }
+    }
+    // Normalizacja
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            kernel[i][j] /= sum;
+        }
+    }
+    return kernel;
+}
+// Poprawiona funkcja rozmycia gaussowskiego
+-(image_object)Gausse_Blur:(image_object)obraz width:(NSInteger)width height:(NSInteger)height radius:(NSInteger)radius {
+    vector<vector<double>> kernel = [self createGaussianBlurKernel:(int)radius];
+    vector<vector<pixel_rgb>> tab_image2(height, vector<pixel_rgb>(width));
+    vector<vector<pixel_rgb>>  tab_image=[self n_2Dimage:obraz];
+    for (long i = radius; i < height - radius; i++) {
+        for (long j = radius; j < width - radius; j++) {
+            double sum_r = 0, sum_g = 0, sum_b = 0, tmpW = 0;
+            for (long iy = i - radius, y_ker = 0; iy <= i + radius; iy++, y_ker++) {
+                for (long jx = j - radius, x_ker = 0; jx <= j + radius; jx++, x_ker++) {
+                    sum_r += tab_image[iy][jx].r * kernel[y_ker][x_ker];
+                    sum_g += tab_image[iy][jx].g * kernel[y_ker][x_ker];
+                    sum_b += tab_image[iy][jx].b * kernel[y_ker][x_ker];
+                    tmpW += kernel[y_ker][x_ker];
+                }
+            }
+            tab_image2[i][j]=[self change_rgba:tab_image2[i][j] r:floor(sum_r / tmpW) g:floor(sum_g / tmpW) b:floor(sum_b / tmpW) a:tab_image[i][j].a];
+        }
+    }
+    int   nn=0;
+    image_object new_image;
+      for(int i=0;i<height;i++){
+          for(int j=0;j<width;j++){
+              new_image.obraz.push_back(tab_image2[i][j]);
+              nn++;
+          }
+      }
+    return new_image;
+}
 -(vector<vector<pixel_rgb>>)resize:(vector<vector<pixel_rgb>>)tab_image width:(int)width height:(int)height{
     tab_image.resize(height);
     for(int i=0;i<height;i++){
@@ -341,15 +318,12 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
     return tab_image;
 }
 void resize2DVector(vector<vector<pixel_rgb>>& vec, int newHeight, int newWidth) {
-    
     vec.resize(newHeight);
-
     // Zmiana szerokości każdego wiersza
     for (auto& row : vec) {
         row.resize(newWidth);
     }
 }
-
 -(image_object)n_GL_clamp_to_border:(image_object)obraz offsetx:(int)offsetx offsety:(int)offsety{
     vector<vector<pixel_rgb>> tab_image;//orginalny obraz
     vector<vector<pixel_rgb>> tab_image2;
@@ -358,10 +332,7 @@ void resize2DVector(vector<vector<pixel_rgb>>& vec, int newHeight, int newWidth)
    resize2DVector(tab_image2, (int)(obraz.height+(2*offsety)), (int)(obraz.width+(2*offsetx)));
     pixel_rgb piksel;
     int ii=0,jj=0;
-    piksel.r=255;
-    piksel.g=255;
-    piksel.b=255;
-    piksel.a=255;
+    piksel=[self change_rgba:piksel r:255 g:255 b:255 a:255];
     for(int i=0;i<(tab_image2.size());i++){
         for(int j=0;j<(tab_image2[i].size());j++){
             tab_image2[i][j]=piksel;
@@ -369,8 +340,6 @@ void resize2DVector(vector<vector<pixel_rgb>>& vec, int newHeight, int newWidth)
     for(int i=offsety;i<(tab_image2.size()-offsety);i++){
         for(int j=offsetx;j<(tab_image2[i].size()-offsetx);j++){
             tab_image2[i][j]=tab_image[ii][jj];
-            
-            
         }jj++;
         ii++;
     }
@@ -385,13 +354,10 @@ void resize2DVector(vector<vector<pixel_rgb>>& vec, int newHeight, int newWidth)
         for(int i=0;i<new_image.height;i++){
             for(int j=0;j<new_image.width;j++){
                 new_image.obraz[nn]=tab_image2[i][j];
-      
                 nn++;
             }
         }
-        
     return new_image;
-    
 }
 
 -(image_object)n_BoxBlur_filter: (image_object)obraz radius:(NSInteger)radius{
@@ -449,10 +415,7 @@ void resize2DVector(vector<vector<pixel_rgb>>& vec, int newHeight, int newWidth)
     uint8_t grayscale;
     for (NSInteger pixelIndex = 0; pixelIndex < totalPixels; pixelIndex++) {
         grayscale = (obraz.obraz[pixelIndex].r * 0.3) + (obraz.obraz[pixelIndex].g* 0.59) + (obraz.obraz[pixelIndex].b * 0.11);
-        obraz.obraz[pixelIndex].r=grayscale  ;
-        obraz.obraz[pixelIndex].g=grayscale ;
-        obraz.obraz[pixelIndex].b=grayscale ;
-        obraz.obraz[pixelIndex].a=grayscale ;
+        obraz.obraz[pixelIndex]=[self change_rgba:obraz.obraz[pixelIndex] r:grayscale g:grayscale b:grayscale a:grayscale];
         }
     return obraz;
 }
@@ -477,7 +440,7 @@ void resize2DVector(vector<vector<pixel_rgb>>& vec, int newHeight, int newWidth)
     
     image_object new_picture=orginal_picture;
  //OBSLUGA  OBRAZU
-    
+    NSInteger radius=5;
     if(switch_grayscale==1){
         new_picture=[self n_grayfilter_filter:new_picture];
     }
@@ -485,13 +448,17 @@ void resize2DVector(vector<vector<pixel_rgb>>& vec, int newHeight, int newWidth)
         new_picture=[self n_nativefilter_filter:new_picture];
     }
     if(switch_boxblur==1){
-        NSInteger radius =5;
+     
         new_picture=[self n_BoxBlur_filter:new_picture radius:radius];
     }
     if(switch_gl_clamp_to_border==1){
         NSInteger offsetx=100,offsety=100;
         new_picture=[self n_GL_clamp_to_border:new_picture offsetx:(int)offsetx offsety:(int)offsety];
     
+    }
+    if(switch_gaussian_blur==1){
+        
+        new_picture=[self Gausse_Blur:new_picture width:new_picture.width height:new_picture.height radius:radius];
     }
     for (NSInteger pixelIndex = 0; pixelIndex < totalPixels; pixelIndex++) {
         unsigned char *pixel = pixels + (pixelIndex * 4); // Dostęp do piksela
