@@ -340,14 +340,60 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
     }
     return tab_image;
 }
+void resize2DVector(vector<vector<pixel_rgb>>& vec, int newHeight, int newWidth) {
+    
+    vec.resize(newHeight);
+
+    // Zmiana szerokości każdego wiersza
+    for (auto& row : vec) {
+        row.resize(newWidth);
+    }
+}
 
 -(image_object)n_GL_clamp_to_border:(image_object)obraz offsetx:(int)offsetx offsety:(int)offsety{
-    vector<vector<pixel_rgb>> tab_image;
-    int nn=0;
+    vector<vector<pixel_rgb>> tab_image;//orginalny obraz
+    vector<vector<pixel_rgb>> tab_image2;
+    image_object new_image;
     tab_image=[self n_2Dimage:obraz];
-    return obraz;
+   resize2DVector(tab_image2, (int)(obraz.height+(2*offsety)), (int)(obraz.width+(2*offsetx)));
+    pixel_rgb piksel;
+    int ii=0,jj=0;
+    piksel.r=255;
+    piksel.g=255;
+    piksel.b=255;
+    piksel.a=255;
+    for(int i=0;i<(tab_image2.size());i++){
+        for(int j=0;j<(tab_image2[i].size());j++){
+            tab_image2[i][j]=piksel;
+        }}
+    for(int i=offsety;i<(tab_image2.size()-offsety);i++){
+        for(int j=offsetx;j<(tab_image2[i].size()-offsetx);j++){
+            tab_image2[i][j]=tab_image[ii][jj];
+            
+            
+        }jj++;
+        ii++;
+    }
+        for(int i=0;i<(tab_image2.size());i++){
+            for(int j=0;j<(tab_image2[i].size());j++){
+                piksel=tab_image2[i][j];
+                new_image.obraz.push_back(piksel);
+            }}
+        new_image.width=(new_image.width+offsetx*2);
+        new_image.height=(new_image.width+offsety*2);
+      int   nn=0;
+        for(int i=0;i<new_image.height;i++){
+            for(int j=0;j<new_image.width;j++){
+                new_image.obraz[nn]=tab_image2[i][j];
+      
+                nn++;
+            }
+        }
+        
+    return new_image;
     
 }
+
 -(image_object)n_BoxBlur_filter: (image_object)obraz radius:(NSInteger)radius{
     vector<vector<pixel_rgb>> tab_image;
     tab_image=[self n_2Dimage:obraz];
@@ -441,6 +487,11 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
     if(switch_boxblur==1){
         NSInteger radius =5;
         new_picture=[self n_BoxBlur_filter:new_picture radius:radius];
+    }
+    if(switch_gl_clamp_to_border==1){
+        NSInteger offsetx=100,offsety=100;
+        new_picture=[self n_GL_clamp_to_border:new_picture offsetx:(int)offsetx offsety:(int)offsety];
+    
     }
     for (NSInteger pixelIndex = 0; pixelIndex < totalPixels; pixelIndex++) {
         unsigned char *pixel = pixels + (pixelIndex * 4); // Dostęp do piksela
