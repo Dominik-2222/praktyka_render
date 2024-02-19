@@ -14,7 +14,7 @@ using namespace std;
     }
 @property (nonatomic, strong) NSImageView *imageView;
 
-- (void)openImageView:(NSImage *)image;
+
 typedef struct pixel_rgb{
     uint8_t r;
     uint8_t g;

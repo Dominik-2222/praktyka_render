@@ -55,38 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "938A73D4-BFC8-4911-837E-1477AEBD696F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "render/AppDelegate.mm"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "-blur:rad:blur_option:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E93BCBB3-CD38-465C-8DCE-FCC4973B7C8E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "render/AppDelegate.mm"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "AppDelegate"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "38485EE5-0E31-4EDB-AE84-A5B15BBA676F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -94,8 +62,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "AppDelegate"
             landmarkType = "3">
             <Locations>
@@ -150,180 +118,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "89FF0EB0-27AC-441C-BAD6-714FDA2C215E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "render/AppDelegate.mm"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "-blur:rad:blur_option:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DDEA3DCF-F9E0-4876-8F47-C8D1A1FD408C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "render/AppDelegate.mm"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "-blur:rad:blur_option:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4416B78B-345F-4611-837D-364A0AAFB400"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "render/AppDelegate.mm"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "-blur:rad:blur_option:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4416B78B-345F-4611-837D-364A0AAFB400 - cff98a1f560678a6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AppDelegate blur:rad:blur_option:]"
-                  moduleName = "render"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "218"
-                  endingLineNumber = "218"
-                  offsetFromSymbolStart = "1744">
-               </Location>
-               <Location
-                  uuid = "4416B78B-345F-4611-837D-364A0AAFB400 - cff98a1f560678a6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AppDelegate blur:rad:blur_option:]"
-                  moduleName = "render"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "218"
-                  endingLineNumber = "218"
-                  offsetFromSymbolStart = "89">
-               </Location>
-               <Location
-                  uuid = "4416B78B-345F-4611-837D-364A0AAFB400 - cff98a1f56067b64"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AppDelegate blur:rad:blur_option:]"
-                  moduleName = "render"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "220"
-                  endingLineNumber = "220"
-                  offsetFromSymbolStart = "89">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A54D501E-E7BE-4050-A61E-ED1FB4B8E864"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "render/AppDelegate.mm"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "-blur:rad:blur_option:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A54D501E-E7BE-4050-A61E-ED1FB4B8E864 - 6fd264087f0185a5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AppDelegate filtr_:]"
-                  moduleName = "render"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "256"
-                  endingLineNumber = "256"
-                  offsetFromSymbolStart = "512">
-               </Location>
-               <Location
-                  uuid = "A54D501E-E7BE-4050-A61E-ED1FB4B8E864 - cff98a1f56067fb9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AppDelegate blur:rad:blur_option:]"
-                  moduleName = "render"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "257"
-                  endingLineNumber = "257"
-                  offsetFromSymbolStart = "1945">
-               </Location>
-               <Location
-                  uuid = "A54D501E-E7BE-4050-A61E-ED1FB4B8E864 - cff98a1f56067e7f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AppDelegate blur:rad:blur_option:]"
-                  moduleName = "render"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "259"
-                  endingLineNumber = "259"
-                  offsetFromSymbolStart = "1945">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D9EF21D0-F179-40AA-86C2-DDE33C98EAB1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "render/AppDelegate.mm"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "-blur:rad:blur_option:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A9B47D20-0C2C-4F75-8FF5-D5739AE37C65"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -331,10 +125,42 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "360"
-            endingLineNumber = "360"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
             landmarkName = "-n_GL_clamp_to_border:offsetx:offsety:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A9B47D20-0C2C-4F75-8FF5-D5739AE37C65 - b92397d3a340bdf5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AppDelegate n_GL_clamp_to_border:offsetx:offsety:]"
+                  moduleName = "render"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "460"
+                  endingLineNumber = "460"
+                  offsetFromSymbolStart = "549">
+               </Location>
+               <Location
+                  uuid = "A9B47D20-0C2C-4F75-8FF5-D5739AE37C65 - b92397d3a340bdf5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AppDelegate n_GL_clamp_to_border:offsetx:offsety:]"
+                  moduleName = "render"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "460"
+                  endingLineNumber = "460"
+                  offsetFromSymbolStart = "1395">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -347,8 +173,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "333"
-            endingLineNumber = "333"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
             landmarkName = "-n_GL_clamp_to_border:offsetx:offsety:"
             landmarkType = "7">
             <Locations>
@@ -410,8 +236,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "331"
-            endingLineNumber = "331"
+            startingLineNumber = "431"
+            endingLineNumber = "431"
             landmarkName = "-n_GL_clamp_to_border:offsetx:offsety:"
             landmarkType = "7">
             <Locations>
@@ -473,8 +299,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
+            startingLineNumber = "428"
+            endingLineNumber = "428"
             landmarkName = "-n_GL_clamp_to_border:offsetx:offsety:"
             landmarkType = "7">
             <Locations>
@@ -521,8 +347,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "329"
-            endingLineNumber = "329"
+            startingLineNumber = "429"
+            endingLineNumber = "429"
             landmarkName = "-n_GL_clamp_to_border:offsetx:offsety:"
             landmarkType = "7">
             <Locations>
@@ -573,6 +399,117 @@
             endingLineNumber = "15"
             landmarkName = "imageView"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87B3A223-3A93-43B8-BDA6-0E154EBA3BB9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "render/AppDelegate.mm"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "87B3A223-3A93-43B8-BDA6-0E154EBA3BB9 - e36f02a7864be3a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AppDelegate Gausse_Blur:width:height:radius:]"
+                  moduleName = "render"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "1460">
+               </Location>
+               <Location
+                  uuid = "87B3A223-3A93-43B8-BDA6-0E154EBA3BB9 - 3f603f98182173ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kernel_1D(int)"
+                  moduleName = "render"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "310">
+               </Location>
+               <Location
+                  uuid = "87B3A223-3A93-43B8-BDA6-0E154EBA3BB9 - 3f603f98182173ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kernel_1D(int)"
+                  moduleName = "render"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "354">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D94632FB-8396-42F3-8475-E98D03E1168D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "render/AppDelegate.mm"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "386"
+            endingLineNumber = "386"
+            landmarkName = "-Gausse_Blur_2:width:height:radius:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACE432D7-4065-48BD-9469-F653ADE87AC3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "render/AppDelegate.mm"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41715B9F-73FE-444E-B91F-18E209F1FFC9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "render/AppDelegate.mm"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
+            landmarkName = "-Gausse_Blur_2_thread:width:height:radius:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
