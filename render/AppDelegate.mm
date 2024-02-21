@@ -28,7 +28,7 @@ bool switch_grayscale=0,switch_negative=0,switch_boxblur=0,switch_gaussian_blur=
 
 image_object orginal_picture;
 
-NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
+NSString *path=@"/Users/motionvfx/Documents/chessboard.png";
 
 
 -(IBAction)switch__gray_scale:(id)sender{
@@ -130,7 +130,6 @@ NSString *path=@"/Users/motionvfx/Documents/kwiatek.tiff";
     return tab_image;
 }
 
-// Poprawiona funkcja tworzenia jądra rozmycia gaussowskiego
 
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -241,219 +240,106 @@ vector<double> automatic_kernel_1D(int radius) {
 
     return kernel;
 }
-//vector<double> Kernel_1D (int radius){
-//    int size = radius * 2 + 1;
-//    vector<double> kernel;
-//    kernel.resize(size);
-//    double sigma = radius / 2.0;
-//    double sum = 0.0;
-//    for (int i = 0; i < size; i++) {
-//            int x = i - radius;
-//            double exponent = -(x * x ) / (2  * sigma);
-//            kernel[i] = (exp(exponent) / (2 * M_PI * sigma));
-//            sum += kernel[i];
-//    }
-//
-//    for (int i = 0; i < size; ++i) {
-//        kernel[i] /= sum;
-//    }
-//    return kernel;
-//}
 
-//void gaussethread(int radius, vector<pixel_rgb> &strefa, vector<double>kernel) {
-//    int size = radius *  2 +  1;
-//    vector<thread*> wektorWatkow;
-//
-//        double sum_r = 0, sum_g = 0, sum_b = 0, tmpW = 0;
-//        for(int kk=0;kk<size;kk++){
-//            sum_r +=  strefa[kk].r * kernel[kk];
-//            sum_g += strefa[kk].g * kernel[kk];
-//            sum_b += strefa[kk].b * kernel[kk];
-//            tmpW += kernel[kk];
-//        }
-//        strefa[(radius+1)].r=floor(sum_r/tmpW);
-//        strefa[(radius+1)].g=floor(sum_g/tmpW);
-//        strefa[(radius+1)].b=floor(sum_b/tmpW);
-//}
-//
-//void change_row (vector<pixel_rgb>&tab_image,int width, int radius,vector<double>kernel){
-//    vector<pixel_rgb>new_tab;
-//    new_tab=tab_image;
-//        double sum_r = 0, sum_g = 0, sum_b = 0, tmpW = 0;
-//    for (long j = radius; j <width - radius ; j++) {//x
-//        for(int ker=0;ker<(radius*2+1);ker++){
-//            sum_r += tab_image[j+ker].r * kernel[ker];
-//            sum_g += tab_image[j+ker].g * kernel[ker];
-//            sum_b += tab_image[j+ker].b * kernel[ker];
-//            tmpW += kernel[ker];}
-//        new_tab[j+radius].r=floor(sum_r/tmpW);
-//        
-//    new_tab[j+radius].g=floor(sum_r/tmpW);
-//        
-//    new_tab[j+radius].b=floor(sum_r/tmpW);
-//    }
-//    tab_image=new_tab;
-//    
-//    
-//}
-
-
-//-(image_object)Gausse_Blur_2_thread:(image_object)obraz width:(NSInteger)width height:(NSInteger)height radius:(NSInteger)radius {
-//    const int l_watkow=1;
-//    NSDate *startTime = [NSDate date];
-//        vector<double> kernel = automatic_kernel_1D((int)radius);
-//    vector<vector<pixel_rgb>> tab_image2(height, vector<pixel_rgb>(width));
-//    tab_image2=[self n_2Dimage:obraz];
-//    vector<vector<pixel_rgb>>  tab_image=[self n_2Dimage:obraz];
-//    
-//    vector<thread*> wektorWatkow;
-//    int stripe_height=((int)height/l_watkow);
-//    for(int col=0;col<l_watkow;col++){
-//        int start_y=col*stripe_height;
-//        int end_y= (col==l_watkow-1)?col*(int)height:((++col)*stripe_height);
-//        
-//        for (long i = radius; i <width - radius ; i++) {
-//            for (long j = start_y; j <end_y-radius ; j++) {
-//                double sum_r = 0, sum_g = 0, sum_b = 0, tmpW = 0;
-//                    for (long jx = j - radius, x_ker = 0; jx <= j + radius; jx++, x_ker++) {
-//                        sum_r += tab_image[jx][i].r * kernel[x_ker];
-//                        sum_g += tab_image[jx][i].g * kernel[x_ker];
-//                        sum_b += tab_image[jx][i].b * kernel[x_ker];
-//                        tmpW += kernel[x_ker];
-//                    }
-//                tab_image2[j][i]=[self change_rgba:tab_image2[j][i] r:floor(sum_r / tmpW) g:floor(sum_g / tmpW) b:floor(sum_b / tmpW) a:tab_image[j][i].a];
-//            }
-//        }
-//        
-//        tab_image=tab_image2;
-//        for (long i = start_y; i < end_y; i++) {
-//            for (long j = radius; j <width - radius ; j++) {
-//                double sum_r = 0, sum_g = 0, sum_b = 0, tmpW = 0;
-//                    for (long jx = j - radius, x_ker = 0; jx <= j + radius; jx++, x_ker++) {
-//                        sum_r += tab_image[i][jx].r * kernel[x_ker];
-//                        sum_g += tab_image[i][jx].g * kernel[x_ker];
-//                        sum_b += tab_image[i][jx].b * kernel[x_ker];
-//                        tmpW += kernel[x_ker];
-//                    }
-//                tab_image2[i][j]=[self change_rgba:tab_image2[i][j] r:floor(sum_r / tmpW) g:floor(sum_g / tmpW) b:floor(sum_b / tmpW) a:tab_image[i][j].a];
-//            }
-//        }
-//    }
-//      
-//       image_object new_image;
-//       int nn=0;
-//    new_image.height=height;
-//    new_image.width=width;
-//       for(int i=0;i<height;i++){
-//             for(int j=0;j<width;j++){
-//                 new_image.obraz.push_back(tab_image2[i][j]);
-//                 nn++;
-//             }
-//         }
-//    NSDate *endTime = [NSDate date];
-//    NSTimeInterval executionTime = [endTime timeIntervalSinceDate:startTime];
-//    NSLog(@"Czas_2_gausse_blur: %f", executionTime);
-//    return new_image;
-//
-//
-//}
-const int l_watkow=8;
-void Gausse_Blur_2_thread_segment(vector<vector<pixel_rgb>>& tab_image, vector<vector<pixel_rgb>>& tab_image2, const vector<double>& kernel, int radius, int start_y, int end_y, int width, int height) {
+const int l_watkow=2;
+void Gausse_Blur_2_thread_segment(vector<vector<pixel_rgb>>&tab_image, const vector<double>&kernel, int &radius, int &start_y, int &end_y, int &width, int &height) {
+    
     for (long i = radius; i <width - radius ; i++) {
         for (long j = radius; j <height - radius ; j++) {
+    
             double sum_r = 0, sum_g = 0, sum_b = 0, tmpW = 0;
-                for (long jx = j - radius, x_ker = 0; jx <= j + radius; jx++, x_ker++) {
+                for (long jx = j - radius, x_ker = 0; jx <= j + radius; jx++, x_ker++) 
+                {
                     sum_r += tab_image[jx][i].r * kernel[x_ker];
                     sum_g += tab_image[jx][i].g * kernel[x_ker];
                     sum_b += tab_image[jx][i].b * kernel[x_ker];
                     tmpW += kernel[x_ker];
                 }
-            tab_image2[j][i].r=(sum_r / tmpW);
-            tab_image2[j][i].g=(sum_g / tmpW);
-            tab_image2[j][i].b=(sum_b / tmpW);
+            tab_image[j][i].r=(sum_r / tmpW);
+            tab_image[j][i].g=(sum_g / tmpW);
+            tab_image[j][i].b=(sum_b / tmpW);
        
         }
     }
-    
-    for (long i = radius; i < height - radius; i++) {
-        for (long j = radius; j <width - radius ; j++) {
-            double sum_r = 0, sum_g = 0, sum_b = 0, tmpW = 0;
-                for (long jx = j - radius, x_ker = 0; jx <= j + radius; jx++, x_ker++) {
-                    sum_r += tab_image[i][jx].r * kernel[x_ker];
-                    sum_g += tab_image[i][jx].g * kernel[x_ker];
-                    sum_b += tab_image[i][jx].b * kernel[x_ker];
+
+}
+void Gausse_Blur_2_thread_segment2(vector<vector<pixel_rgb>>& tab_image,  const vector<double>& kernel, int &radius, int &start_y, int &end_y, int &width, int &height) {
+    double sum_r = 0, sum_g = 0, sum_b = 0, tmpW = 0;
+    for (long ix = start_y+radius; ix < end_y; ix++) {
+        for (long jy = radius; jy <width - radius ; jy++) {
+            sum_r = 0; sum_g = 0; sum_b = 0; tmpW = 0;
+                for (long jx = jy - radius, x_ker = 0; jx <= jy + radius; jx++, x_ker++) {
+                    sum_r += tab_image[ix][jx].r * kernel[x_ker];
+                    sum_g += tab_image[ix][jx].g * kernel[x_ker];
+                    sum_b += tab_image[ix][jx].b * kernel[x_ker];
                     tmpW += kernel[x_ker];
                 }
-            tab_image2[i][j].r=(sum_r / tmpW);
-            tab_image2[i][j].g=(sum_g / tmpW);
-            tab_image2[i][j].b=(sum_b / tmpW);
-        }
-    }
-}void Gausse_Blur_2_thread_segment2(vector<vector<pixel_rgb>>& tab_image, vector<vector<pixel_rgb>>& tab_image2, const vector<double>& kernel, int radius, int start_y, int end_y, int width, int height) {
-    for (long i = radius; i < height - radius; i++) {
-        for (long j = radius; j <width - radius ; j++) {
-            double sum_r = 0, sum_g = 0, sum_b = 0, tmpW = 0;
-                for (long jx = j - radius, x_ker = 0; jx <= j + radius; jx++, x_ker++) {
-                    sum_r += tab_image[i][jx].r * kernel[x_ker];
-                    sum_g += tab_image[i][jx].g * kernel[x_ker];
-                    sum_b += tab_image[i][jx].b * kernel[x_ker];
-                    tmpW += kernel[x_ker];
-                }
-            tab_image2[i][j].r=(sum_r / tmpW);
-            tab_image2[i][j].g=(sum_g / tmpW);
-            tab_image2[i][j].b=(sum_b / tmpW);
+            tab_image[ix][jy].r=(sum_r / tmpW);
+            tab_image[ix][jy].g=(sum_g / tmpW);
+            tab_image[ix][jy].b=(sum_b / tmpW);
         }
     }
 }
 
 image_object Gausse_Blur_2_thread(image_object obraz, int width, int height, int radius) {
+    NSDate *startTime = [NSDate date];
     vector<double> kernel = automatic_kernel_1D(radius);
-    vector<vector<pixel_rgb>> tab_image2(height, vector<pixel_rgb>(width));
+//    vector<vector<pixel_rgb>> tab_image2(height, vector<pixel_rgb>(width));
     obraz.width=width;
     obraz.height=height;
-    tab_image2 = n_2Dimage2(obraz);
+//    tab_image2 = n_2Dimage2(obraz);
     vector<vector<pixel_rgb>> tab_image = n_2Dimage2(obraz);
 
     int stripe_height = height / l_watkow;
-    vector<thread> threads;
+    vector<thread*> threads;
 
     for (int col = 0; col < l_watkow; ++col) {
+        if(col%2==0){
+            continue;
+        }
         int start_y = col * stripe_height;
-        int end_y = (col == l_watkow - 1) ? height : (col + 1) * stripe_height;
-
-        threads.push_back(thread(Gausse_Blur_2_thread_segment, ref(tab_image), ref(tab_image2), cref(kernel), radius, start_y, end_y, width, height));
+        int end_y = start_y+stripe_height;
+        thread *watek = new thread(Gausse_Blur_2_thread_segment2, ref(tab_image),  cref(kernel), ref(radius), ref(start_y), ref(end_y), ref(width), ref(height));
+        threads.push_back(watek);
     }
 
-    for (auto& th : threads) {
-        th.join();
-    }
-    tab_image=tab_image2;
-    for (int col = 0; col < l_watkow; ++col) {
-        int start_y = col * stripe_height;
-        int end_y = (col == l_watkow - 1) ? height : (col + 1) * stripe_height;
-
-        threads.push_back(thread(Gausse_Blur_2_thread_segment2, ref(tab_image), ref(tab_image2), cref(kernel), radius, start_y, end_y, width, height));
+    for (int i=0;i< threads.size();i++) {
+        threads[i]->join();
+        delete threads[i];
     }
 
-    for (auto& th : threads) {
-        th.join();
-    }
+    //tab_image=tab_image2;
+    threads.clear();
+//    for (int col = 0; col < l_watkow; ++col) {
+//        int start_y = col * stripe_height;
+//        int end_y = (col == l_watkow - 1) ? height : (col + 1) * stripe_height;
+//        thread *watek = new thread(Gausse_Blur_2_thread_segment2, ref(tab_image),  cref(kernel), ref(radius), ref(start_y), ref(end_y), ref(width), ref(height));
+//        threads.push_back(watek);
+//    }
+//
+//    for (int i=0;i< threads.size();i++) {
+//        threads[i]->join();
+//        delete threads[i];
+//    }
     image_object new_image;
     int nn=0;
     for(int i=0;i<height;i++){
           for(int j=0;j<width;j++){
-              new_image.obraz.push_back(tab_image2[i][j]);
+              new_image.obraz.push_back(tab_image[i][j]);
               nn++;
           }
       }
+    NSDate *endTime = [NSDate date];
+    NSTimeInterval executionTime = [endTime timeIntervalSinceDate:startTime];
+    NSLog(@"Czas_2_gausse_blur_watkowy: %f", executionTime);
     return new_image;
 }
 
 -(image_object)Gausse_Blur_2:(image_object)obraz width:(NSInteger)width height:(NSInteger)height radius:(NSInteger)radius {
     NSDate *startTime = [NSDate date];
         vector<double> kernel = automatic_kernel_1D((int)radius);
-    vector<vector<pixel_rgb>> tab_image2(height, vector<pixel_rgb>(width));
-    tab_image2=[self n_2Dimage:obraz];
+  //  vector<vector<pixel_rgb>> tab_image2(height, vector<pixel_rgb>(width));
+//    tab_image2=[self n_2Dimage:obraz];
     vector<vector<pixel_rgb>>  tab_image=[self n_2Dimage:obraz];
  
     for (long i = radius; i <width - radius ; i++) {
@@ -465,28 +351,28 @@ image_object Gausse_Blur_2_thread(image_object obraz, int width, int height, int
                     sum_b += tab_image[jx][i].b * kernel[x_ker];
                     tmpW += kernel[x_ker];
                 }
-            tab_image2[j][i]=[self change_rgba:tab_image2[j][i] r:floor(sum_r / tmpW) g:floor(sum_g / tmpW) b:floor(sum_b / tmpW) a:tab_image[j][i].a];
+            tab_image[j][i]=[self change_rgba:tab_image[j][i] r:floor(sum_r / tmpW) g:floor(sum_g / tmpW) b:floor(sum_b / tmpW) a:tab_image[j][i].a];
         }
     }
     
-    tab_image=tab_image2;
-    for (long i = radius; i < height - radius; i++) {
-        for (long j = radius; j <width - radius ; j++) {
-            double sum_r = 0, sum_g = 0, sum_b = 0, tmpW = 0;
-                for (long jx = j - radius, x_ker = 0; jx <= j + radius; jx++, x_ker++) {
-                    sum_r += tab_image[i][jx].r * kernel[x_ker];
-                    sum_g += tab_image[i][jx].g * kernel[x_ker];
-                    sum_b += tab_image[i][jx].b * kernel[x_ker];
-                    tmpW += kernel[x_ker];
-                }
-            tab_image2[i][j]=[self change_rgba:tab_image2[i][j] r:floor(sum_r / tmpW) g:floor(sum_g / tmpW) b:floor(sum_b / tmpW) a:tab_image[i][j].a];
-        }
-    }
+    //tab_image=tab_image2;
+//    for (long i = radius; i < height - radius; i++) {
+//        for (long j = radius; j <width - radius ; j++) {
+//            double sum_r = 0, sum_g = 0, sum_b = 0, tmpW = 0;
+//                for (long jx = j - radius, x_ker = 0; jx <= j + radius; jx++, x_ker++) {
+//                    sum_r += tab_image[i][jx].r * kernel[x_ker];
+//                    sum_g += tab_image[i][jx].g * kernel[x_ker];
+//                    sum_b += tab_image[i][jx].b * kernel[x_ker];
+//                    tmpW += kernel[x_ker];
+//                }
+//            tab_image[i][j]=[self change_rgba:tab_image[i][j] r:floor(sum_r / tmpW) g:floor(sum_g / tmpW) b:floor(sum_b / tmpW) a:tab_image[i][j].a];
+//        }
+//    }
     image_object new_image;
     int nn=0;
     for(int i=0;i<height;i++){
           for(int j=0;j<width;j++){
-              new_image.obraz.push_back(tab_image2[i][j]);
+              new_image.obraz.push_back(tab_image[i][j]);
               nn++;
           }
       }
@@ -626,7 +512,7 @@ vector<vector<pixel_rgb>> n_2Dimage2 (image_object obraz){
         obraz.obraz[pixelIndex].r=(255-obraz.obraz[pixelIndex].r)  ;
         obraz.obraz[pixelIndex].g=(255-obraz.obraz[pixelIndex].g) ;
         obraz.obraz[pixelIndex].b=(255-obraz.obraz[pixelIndex].b) ;
-        obraz.obraz[pixelIndex].a=(255-obraz.obraz[pixelIndex].a) ;
+ 
         }
     return obraz;
 }
@@ -636,7 +522,7 @@ vector<vector<pixel_rgb>> n_2Dimage2 (image_object obraz){
     uint8_t grayscale;
     for (NSInteger pixelIndex = 0; pixelIndex < totalPixels; pixelIndex++) {
         grayscale = (obraz.obraz[pixelIndex].r * 0.3) + (obraz.obraz[pixelIndex].g* 0.59) + (obraz.obraz[pixelIndex].b * 0.11);
-        obraz.obraz[pixelIndex]=[self change_rgba:obraz.obraz[pixelIndex] r:grayscale g:grayscale b:grayscale a:grayscale];
+        obraz.obraz[pixelIndex]=[self change_rgba:obraz.obraz[pixelIndex] r:grayscale g:grayscale b:grayscale a:obraz.obraz[pixelIndex].a];
         }
     return obraz;
 }
@@ -670,7 +556,7 @@ pixel_rgb interpolacja(vector<vector<pixel_rgb>> map, double x, double y) {
     vector<vector<pixel_rgb>> tab_image = [self n_2Dimage:obraz];
     int width = (int)obraz.width;
     int height = (int)obraz.height;
-    // Przygotowanie tablicy na zmodyfikowany obraz
+
     vector<vector<pixel_rgb>> modified_image(height, vector<pixel_rgb>(width));
 
     for(int i = 0; i < height; i++) {
@@ -755,7 +641,7 @@ pixel_rgb interpolacja(vector<vector<pixel_rgb>> map, double x, double y) {
 
     }
     if(switch_gauss_2_przebiegi==1){
-        new_picture=[self Gausse_Blur_2:new_picture width:new_picture.width height:new_picture.height radius:radius];
+        new_picture=[self Gausse_Blur_2:new_picture width:new_picture.width height:new_picture.height radius:(int)radius];
     }
     if(switch_gauss2_przebiegi_watkow==1){
         new_picture= Gausse_Blur_2_thread(new_picture,(int)new_picture.width ,(int)new_picture.height,(int)radius);
