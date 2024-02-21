@@ -577,7 +577,7 @@ pixel_rgb interpolacja(vector<vector<pixel_rgb>> map, double x, double y) {
     for (NSInteger pixelIndex = 0; pixelIndex < totalPixels; pixelIndex++) {
         unsigned char *pixel = pixels + (pixelIndex * 4); // Dostęp do piksela
         pixel[0]=new_picture.obraz[pixelIndex].r; // Red
-        pixel[1]=piksl.g=new_picture.obraz[pixelIndex].g ; // Greenś
+        pixel[1]=piksl.g=new_picture.obraz[pixelIndex].g ; // Green
         pixel[2]=piksl.b=new_picture.obraz[pixelIndex].b ; // Blue
         pixel[3]=piksl.a=new_picture.obraz[pixelIndex].a;
         }
