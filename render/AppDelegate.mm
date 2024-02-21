@@ -1,13 +1,4 @@
-//
-//  AppDelegate.m
-//  render
-//
-//  Created by MotionVFX on 12/02/2024.
-//
-
 #import "AppDelegate.h"
-
-
 #include <vector>
 #include <cstdint>
 #include <cmath>
@@ -15,7 +6,6 @@
 #include <thread>
 using namespace std;
 #define RGBA(i) (i).r,(i).g,(i).b,(i).a
-
 
 @interface AppDelegate ()
 
@@ -30,7 +20,6 @@ image_object orginal_picture;
 
 NSString *path=@"/Users/motionvfx/Documents/zdjecie.tiff";
 //NSString *path=@"/Users/motionvfx/Documents/chessboard.png";
-
 
 -(IBAction)switch__gray_scale:(id)sender{
     switch_grayscale=!switch_grayscale;
@@ -130,9 +119,6 @@ NSString *path=@"/Users/motionvfx/Documents/zdjecie.tiff";
     }
     return tab_image;
 }
-
-
-
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
 }
 - (BOOL)applicationSupportsSecureRestorableState:(NSApplication *)app {
@@ -241,10 +227,6 @@ vector<double> automatic_kernel_1D(int radius) {
     return kernel;
 }
 //const int l_watkow=100;
-
-
-
-
 void Gausse_Blur_2_thread_segment(vector<vector<pixel_rgb>>&tab_image, const vector<double>&kernel, int radius, int start_y, int end_y, int width, int height) {
     double sum_r = 0, sum_g = 0, sum_b = 0, tmpW = 0;
     for (long i = radius; i <width - radius ; i++) {
@@ -264,8 +246,6 @@ void Gausse_Blur_2_thread_segment(vector<vector<pixel_rgb>>&tab_image, const vec
        //shedertoy blur gaussa, na 2 przebiegi, kawasse
         }
     }
-
-
 }
 void Gausse_Blur_2_thread_segment2(vector<vector<pixel_rgb>>& tab_image,  const vector<double>& kernel, int radius, int start_y, int end_y, int width, int height) {
    
@@ -284,9 +264,7 @@ void Gausse_Blur_2_thread_segment2(vector<vector<pixel_rgb>>& tab_image,  const 
             tab_image[ix][jy].b=(sum_b / tmpW);
         }
     }
-   
 }
-
 image_object Gausse_Blur_2_thread(image_object obraz, int width, int height, int radius) {
     NSDate *startTime = [NSDate date];
     vector<double> kernel = automatic_kernel_1D(radius);
@@ -296,18 +274,16 @@ image_object Gausse_Blur_2_thread(image_object obraz, int width, int height, int
   const int l_watkow=(height-2*radius);//nie widze w konsoli na ilu watkach pracuje a przy l_watkow 100 juz widac wirtualne 100 watkow
     //5.696521
     //5.571306
- //   int l_watkow=10;
+    //int l_watkow=10;
     //5.675877
     //5.759511
     //    tab_image2 = n_2Dimage2(obraz);
     vector<vector<pixel_rgb>> tab_image = n_2Dimage2(obraz);
-  
     int stripe_height = (height-radius*2) / l_watkow;
     vector<thread*> threads;
     int start_y =0;
     int end_y=0;
     for (int col = 0; col < l_watkow; ++col) {
-      
         start_y = col * stripe_height+radius;
         end_y = start_y+stripe_height;
         thread *watek = new thread(Gausse_Blur_2_thread_segment, ref(tab_image),  cref(kernel), radius, start_y, end_y, width, height);
@@ -320,7 +296,6 @@ image_object Gausse_Blur_2_thread(image_object obraz, int width, int height, int
         threads[i]->join();
         delete threads[i];
     }
-
     //tab_image=tab_image2;
     threads.clear();
     for (int col = 0; col < l_watkow; ++col) {
@@ -446,39 +421,18 @@ vector<vector<pixel_rgb>> n_2Dimage2 (image_object obraz){
 }
 
 -(image_object)n_GL_clamp_to_border:(image_object)obraz offsetx:(int)offsetx offsety:(int)offsety{
-    vector<vector<pixel_rgb>> tab_image;//orginalny obraz
-    vector<vector<pixel_rgb>> tab_image2;
-    image_object new_image;
-    tab_image=[self n_2Dimage:obraz];
-   resize2DVectorr(tab_image2, (int)(obraz.height+(2*offsety)), (int)(obraz.width+(2*offsetx)));
-    pixel_rgb piksel;
-    int ii=0,jj=0;
-    piksel=[self change_rgba:piksel r:255 g:255 b:255 a:255];
-    for(int i=0;i<(tab_image2.size());i++){
-        for(int j=0;j<(tab_image2[i].size());j++){
-            tab_image2[i][j]=piksel;
-        }}
-    for(int i=offsety;i<(tab_image2.size()-offsety);i++){
-        for(int j=offsetx;j<(tab_image2[i].size()-offsetx);j++){
-            tab_image2[i][j]=tab_image[ii][jj];
-        }jj++;
-        ii++;
-    }
-        for(int i=0;i<(tab_image2.size());i++){
-            for(int j=0;j<(tab_image2[i].size());j++){
-                piksel=tab_image2[i][j];
-                new_image.obraz.push_back(piksel);
-            }}
-        new_image.width=(new_image.width+offsetx*2);
-        new_image.height=(new_image.width+offsety*2);
-      int   nn=0;
-        for(int i=0;i<new_image.height;i++){
-            for(int j=0;j<new_image.width;j++){
-                new_image.obraz[nn]=tab_image2[i][j];
-                nn++;
-            }
-        }
-    return new_image;
+//    vector<vector<pixel_rgb>> tab_image;//orginalny obraz
+//    tab_image=[self n_2Dimage:obraz];
+//    image_object new_image;
+//    
+//    int nn=0;
+//  
+//    for(int i=0;i<new_image.height;i++){
+//          for(int j=0;j<new_image.width;j++){
+//              new_image.obraz.push_back(tab_image[j][i]);
+//          }
+//      }
+    return obraz;
 }
 
 -(image_object)n_BoxBlur_filter: (image_object)obraz radius:(NSInteger)radius{
@@ -525,7 +479,6 @@ vector<vector<pixel_rgb>> n_2Dimage2 (image_object obraz){
         obraz.obraz[pixelIndex].r=(255-obraz.obraz[pixelIndex].r)  ;
         obraz.obraz[pixelIndex].g=(255-obraz.obraz[pixelIndex].g) ;
         obraz.obraz[pixelIndex].b=(255-obraz.obraz[pixelIndex].b) ;
- 
         }
     return obraz;
 }
@@ -592,21 +545,21 @@ pixel_rgb interpolacja(vector<vector<pixel_rgb>> map, double x, double y) {
     }
     image_object new_picture=orginal_picture;
  //OBSLUGA  OBRAZU
-    NSInteger radius=30;
+    NSInteger radius=100;
     if(switch_grayscale==1){
         new_picture=[self n_grayfilter_filter:new_picture];
     }
     if(switch_negative==1){
         new_picture=[self n_nativefilter_filter:new_picture];
-    }
-    if(switch_boxblur==1){
-        new_picture=[self n_BoxBlur_filter:new_picture radius:radius];
-    }
-    if(switch_gl_clamp_to_border==1){
+    }if(switch_gl_clamp_to_border==1){
         NSInteger offsetx=100,offsety=100;
         new_picture=[self n_GL_clamp_to_border:new_picture offsetx:(int)offsetx offsety:(int)offsety];
     
     }
+    if(switch_boxblur==1){
+        new_picture=[self n_BoxBlur_filter:new_picture radius:radius];
+    }
+    
     if(switch_gaussian_blur==1){
         //podzial obrazka
         new_picture=[self Gausse_Blur:new_picture width:new_picture.width height:new_picture.height radius:radius];
@@ -636,7 +589,4 @@ pixel_rgb interpolacja(vector<vector<pixel_rgb>> map, double x, double y) {
     [self OpenImageView:ScaleImage];
     NSLog(@"wyświetl");
 }
-
-
-
 @end
