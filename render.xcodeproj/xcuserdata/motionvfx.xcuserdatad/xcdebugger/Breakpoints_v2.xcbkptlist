@@ -125,28 +125,13 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "468"
-            endingLineNumber = "468"
+            startingLineNumber = "473"
+            endingLineNumber = "473"
             landmarkName = "-n_GL_clamp_to_border:offsetx:offsety:"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "A9B47D20-0C2C-4F75-8FF5-D5739AE37C65 - e4065921e5052f5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AppDelegate n_BoxBlur_filter:radius:]"
-                  moduleName = "render"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "469"
-                  endingLineNumber = "469"
-                  offsetFromSymbolStart = "59">
-               </Location>
-               <Location
-                  uuid = "A9B47D20-0C2C-4F75-8FF5-D5739AE37C65 - b92397d3a340bf0d"
+                  uuid = "A9B47D20-0C2C-4F75-8FF5-D5739AE37C65 - b92397d3a340bf62"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -156,8 +141,23 @@
                   urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "468"
-                  endingLineNumber = "468"
+                  startingLineNumber = "471"
+                  endingLineNumber = "471"
+                  offsetFromSymbolStart = "549">
+               </Location>
+               <Location
+                  uuid = "A9B47D20-0C2C-4F75-8FF5-D5739AE37C65 - b92397d3a340bf62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AppDelegate n_GL_clamp_to_border:offsetx:offsety:]"
+                  moduleName = "render"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "471"
+                  endingLineNumber = "471"
                   offsetFromSymbolStart = "1395">
                </Location>
             </Locations>
@@ -173,8 +173,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "441"
-            endingLineNumber = "441"
+            startingLineNumber = "446"
+            endingLineNumber = "446"
             landmarkName = "-n_GL_clamp_to_border:offsetx:offsety:"
             landmarkType = "7">
             <Locations>
@@ -236,8 +236,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "439"
-            endingLineNumber = "439"
+            startingLineNumber = "444"
+            endingLineNumber = "444"
             landmarkName = "-n_GL_clamp_to_border:offsetx:offsety:"
             landmarkType = "7">
             <Locations>
@@ -299,8 +299,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "436"
-            endingLineNumber = "436"
+            startingLineNumber = "441"
+            endingLineNumber = "441"
             landmarkName = "-n_GL_clamp_to_border:offsetx:offsety:"
             landmarkType = "7">
             <Locations>
@@ -347,8 +347,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "437"
-            endingLineNumber = "437"
+            startingLineNumber = "442"
+            endingLineNumber = "442"
             landmarkName = "-n_GL_clamp_to_border:offsetx:offsety:"
             landmarkType = "7">
             <Locations>
@@ -411,8 +411,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "374"
-            endingLineNumber = "374"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
             landmarkName = "-Gausse_Blur_2:width:height:radius:"
             landmarkType = "7">
          </BreakpointContent>
@@ -427,8 +427,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "Gausse_Blur_2_thread(obraz, width, height, radius)"
             landmarkType = "9">
          </BreakpointContent>
@@ -443,8 +443,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
             landmarkName = "Gausse_Blur_2_thread(obraz, width, height, radius)"
             landmarkType = "9">
          </BreakpointContent>
@@ -459,10 +459,42 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
             landmarkName = "Gausse_Blur_2_thread(obraz, width, height, radius)"
             landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "90CCA1B3-53CC-43AD-9692-19A2551B63EA - f4a48c5eaaf31c84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gausse_Blur_2_thread(image_object, int, int, int)"
+                  moduleName = "render"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "308"
+                  endingLineNumber = "308"
+                  offsetFromSymbolStart = "690">
+               </Location>
+               <Location
+                  uuid = "90CCA1B3-53CC-43AD-9692-19A2551B63EA - f4a48c5eaaf31c65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gausse_Blur_2_thread(image_object, int, int, int)"
+                  moduleName = "render"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "309"
+                  endingLineNumber = "309"
+                  offsetFromSymbolStart = "727">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -475,8 +507,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
             landmarkName = "Gausse_Blur_2_thread(obraz, width, height, radius)"
             landmarkType = "9">
          </BreakpointContent>
@@ -491,8 +523,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
             landmarkName = "Gausse_Blur_2_thread(obraz, width, height, radius)"
             landmarkType = "9">
             <Locations>
@@ -539,8 +571,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "324"
-            endingLineNumber = "324"
+            startingLineNumber = "329"
+            endingLineNumber = "329"
             landmarkName = "Gausse_Blur_2_thread(obraz, width, height, radius)"
             landmarkType = "9">
          </BreakpointContent>
@@ -555,8 +587,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "Gausse_Blur_2_thread(obraz, width, height, radius)"
             landmarkType = "9">
             <Locations>
@@ -603,10 +635,10 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "336"
-            endingLineNumber = "336"
-            landmarkName = "Gausse_Blur_2_thread(obraz, width, height, radius)"
-            landmarkType = "9">
+            startingLineNumber = "341"
+            endingLineNumber = "341"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -619,8 +651,8 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
             landmarkName = "Gausse_Blur_2_thread(obraz, width, height, radius)"
             landmarkType = "9">
          </BreakpointContent>
@@ -635,10 +667,89 @@
             filePath = "render/AppDelegate.mm"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
+            startingLineNumber = "347"
+            endingLineNumber = "347"
             landmarkName = "-Gausse_Blur_2:width:height:radius:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12D59BA4-A7F1-4B1E-BB71-58719986BA27"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "render/AppDelegate.mm"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "automatic_kernel_1D(radius)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C306688-BDB5-4899-B01B-E5E48A8FDE26"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "render/AppDelegate.mm"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
+            landmarkName = "Gausse_Blur_2_thread(obraz, width, height, radius)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "9C306688-BDB5-4899-B01B-E5E48A8FDE26 - f4a48c5eaaf31ce1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gausse_Blur_2_thread(image_object, int, int, int)"
+                  moduleName = "render"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "305"
+                  endingLineNumber = "305"
+                  offsetFromSymbolStart = "556">
+               </Location>
+               <Location
+                  uuid = "9C306688-BDB5-4899-B01B-E5E48A8FDE26 - f4a48c5eaaf31ce1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gausse_Blur_2_thread(image_object, int, int, int)"
+                  moduleName = "render"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "305"
+                  endingLineNumber = "305"
+                  offsetFromSymbolStart = "561">
+               </Location>
+               <Location
+                  uuid = "9C306688-BDB5-4899-B01B-E5E48A8FDE26 - f4a48c5eaaf31ce1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gausse_Blur_2_thread(image_object, int, int, int)"
+                  moduleName = "render"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/motionvfx/Documents/projekty/render/render/AppDelegate.mm"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "305"
+                  endingLineNumber = "305"
+                  offsetFromSymbolStart = "569">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
